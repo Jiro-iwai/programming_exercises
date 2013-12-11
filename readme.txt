@@ -1,1 +1,1 @@
-これはテストです。
+This is a test project.
