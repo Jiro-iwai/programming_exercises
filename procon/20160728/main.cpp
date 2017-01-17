@@ -10,15 +10,15 @@ using namespace boost;
 
 pair<int, int> solve(int sh, int sw, int H, int W, vector<vector<pair<int,bool>>>& mat, int f, int m, int o, char d)
 {
-	cout << "(" << sh << "," << sw << ") ";
+	//cout << "(" << sh << "," << sw << ") ";
 	
 	if( sw < 0 || sw == W || o <= 0 ) {
-		cout << "NA" << endl;
+		//cout << "NA" << endl;
 		return std::move(make_pair(-1, o));
 	}
 
 	if( sh == H ) {
-		cout << "OK" << endl;		
+		//cout << "OK" << endl;		
 		return std::move(make_pair(f, o));
 	}
 
@@ -33,7 +33,7 @@ pair<int, int> solve(int sh, int sw, int H, int W, vector<vector<pair<int,bool>>
 
 		f += v;
 		if( f < 0 ) {
-			cout << "NA" << endl;			
+			//cout << "NA" << endl;			
 			return std::move(make_pair(-1, o));
 		}
 
@@ -108,10 +108,10 @@ int main(int argc, char* argv[])
 				getline(cin, line);
 				tknzr tkns(line, sep);
 				for( auto xs : tkns ) {
-					cout << xs << " ";
+					//cout << xs << " ";
 					row.push_back(make_pair(lexical_cast<int>(xs),false));
 				}
-				cout << endl;
+				//cout << endl;
 				mat.push_back(row);
 			}
 		}
@@ -120,7 +120,7 @@ int main(int argc, char* argv[])
 		mo = 0;			
 		pair<int,int> p = make_pair(INT_MAX, -1);
 		for( int sw = 0; sw < W; sw++ ) {
-			p = solve(0, sw, H, W, mat, f, m, o, 'N');
+			p = solve(0, sw, H, W, mat, f, m, o-1, 'N');
 			if( mf < p.first ){
 				mf = p.first;
 				mo = p.second; 					
