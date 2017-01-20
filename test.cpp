@@ -8,6 +8,7 @@ int main()
   ofs << "testmessage" << 123 << std::endl;
   ofs << "testmessage" << 123 << std::endl;
   ofs << "testmessage" << 123 << std::endl;
+  ofs << "testmessage" << 124 << std::endl;  
 
   return 0;
 }
